@@ -87,6 +87,9 @@ push: ## Push docker image.
 .PHONY: setup
 setup: $(BINDIR) golangci-lint $(DEV_TOOLS) ## Setup tools.
 
+$(BINDIR):
+	mkdir -p $(BINDIR)
+
 clean: ## Clean tools.
 	rm -fr $(BINDIR)
 
