@@ -12,12 +12,7 @@ COPY script-library/fish-debian.sh /tmp/fish-debian.sh
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends postgresql-client \
-    && /tmp/fish-debian.sh \
-    && rm /tmp/fish-debian.sh \
-    && curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/install-omf \
-    && fish /tmp/install-omf --noninteractive \
-    && rm /tmp/install-omf
+    && apt-get -y install --no-install-recommends postgresql-client
 
 # [Optional] Uncomment the next lines to use go get to install anything else you need
 # USER vscode
